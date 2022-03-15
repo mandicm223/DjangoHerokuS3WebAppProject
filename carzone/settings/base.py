@@ -24,6 +24,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
 
 
+LOGIN_REDIRECT_URL = 'dashboard'
+
 
 # Application definition
 
@@ -39,8 +41,19 @@ INSTALLED_APPS = [
     'django_extensions',
     'ckeditor',
     'django.contrib.humanize',
+
     'pages',
     'cars',
+    'accounts',
+    'contacts',
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+
+    # providers
+    'allauth.socialaccount.providers.facebook',
+    'allauth.socialaccount.providers.google',
 ]
 
 MIDDLEWARE = [
@@ -126,4 +139,19 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Django Messages
+from django.contrib.messages import constants as messages
+MESSAGE_TAGS = {
+    messages.INFO: '',
+    50: 'critical',
+}
+
 SITE_ID = 1
+
+# Email sending
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'mandicm223@gmail.com'
+EMAIL_HOST_PASSWORD = 'docazbtlmvhnoamo'
+EMAIL_USE_TLS = True
