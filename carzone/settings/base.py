@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 import dj_database_url
 from decouple import config
 from dotenv import load_dotenv, find_dotenv
-
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -114,6 +114,10 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_TZ = True
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR , 'carzone/static')
+]
 
 
 
