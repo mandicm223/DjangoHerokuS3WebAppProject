@@ -1,4 +1,5 @@
 from .base import *
+import os
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-yn8mu3=(jjkmbzcnw(t1nlmxx7ohu4alnr+-yie)f(ffb=jkfl'
@@ -14,6 +15,10 @@ ALLOWED_HOSTS = ['*']
 STATIC_URL = 'static/'
 
 STATIC_ROOT = BASE_DIR / 'staticfiles'
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR , 'carzone/static')
+]
 
 MEDIA_URL = 'media/'
 
