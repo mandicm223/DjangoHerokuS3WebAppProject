@@ -47,6 +47,28 @@
                     <h5>Allow us to guide you through the innovative stress<br>
                         free approach in finding your dream car.</h5>
                     <a href="{% url 'services' %}" class="btn btn-lg btn-theme">Read more</a>
+                    <br>
+                    {% if user.is_authenticated %}
+
+                        <a href="{% url 'dashboard' %}" class="btn btn-lg btn-theme">Dashboard</a>
+                        
+                        <br>
+                        
+                        <a href="javascript:{document.getElementById('logout').submit()}" class="btn btn-lg btn-theme">Logout</a>
+                        <form action="{% url 'logout' %}" id="logout" method="POST">
+                            {% csrf_token %}
+                            <input type="hidden">
+                        </form>
+
+                    {% else %}
+
+                        <a href="{% url 'login' %}" class="btn btn-lg btn-theme">Login</a>
+                        
+                        <br>
+                        
+                        <a href="{% url 'register' %}" class="btn btn-lg btn-theme">Register</a>
+
+                    {% endif %}
                 </div>
             </div>
             <div class="carousel-item banner-max-height item-bg">
@@ -56,6 +78,28 @@
                     <h5>Allow us to guide you through the innovative stress<br>
                         free approach in finding your dream car.</h5>
                     <a href="{% url 'services' %}" class="btn btn-lg btn-theme">Read more</a>
+                    <br>
+                    {% if user.is_authenticated %}
+
+                        <a href="{% url 'dashboard' %}" class="btn btn-lg btn-theme">Dashboard</a>
+                        
+                        <br>
+                        
+                        <a href="javascript:{document.getElementById('logout').submit()}" class="btn btn-lg btn-theme">Logout</a>
+                        <form action="{% url 'logout' %}" id="logout" method="POST">
+                            {% csrf_token %}
+                            <input type="hidden">
+                        </form>
+
+                    {% else %}
+
+                        <a href="{% url 'login' %}" class="btn btn-lg btn-theme">Login</a>
+                        
+                        <br>
+                        
+                        <a href="{% url 'register' %}" class="btn btn-lg btn-theme">Register</a>
+
+                    {% endif %}
                 </div>
             </div>
         </div>
